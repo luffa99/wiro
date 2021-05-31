@@ -51,7 +51,7 @@ viewModel.onButtonTap = (btargs) => {
             isLoggedIn = true;
             viewModel.set("isLoggedIn",true);
             viewModel.set("welcomeText2","Account di: "+appSettings.getString("loggedUserName", "tu"));  
-            SelectedPageService.getInstance().updateSelectedPage("Settings");
+            SelectedPageService.getInstance().updateSelectedPage("Login/Logout");
             Dialogs.alert({
                 title: "Successo",
                 message: "Login effettuato.",
@@ -99,14 +99,14 @@ viewModel.onButtonTap = (btargs) => {
             isLoggedIn = false;
             viewModel.set("isLoggedIn",false);
             viewModel.set("welcomeText","Esegui il Login per sincronizzare e controllare le corse!");
-            SelectedPageService.getInstance().updateSelectedPage("Settings");
+            SelectedPageService.getInstance().updateSelectedPage("Login/Logout");
         }
       })
     
   }
 
 function SettingsViewModel(thepage) {
-    SelectedPageService.getInstance().updateSelectedPage("Settings");
+    SelectedPageService.getInstance().updateSelectedPage("Login/Logout");
 
     checkSession("Settings");
 

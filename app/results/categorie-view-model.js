@@ -11,7 +11,7 @@ const { Frame } = require("@nativescript/core");
 viewModel.onItemTap = (args) => {
     
     Frame.topmost().navigate({
-        moduleName: "featured/classifica",
+        moduleName: "results/classifica",
         context: { gara: garaId, categoria: cats[args.index].id},
         transition: {
             name: "fade"

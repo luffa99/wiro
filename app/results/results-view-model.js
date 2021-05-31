@@ -40,7 +40,7 @@ function updatePaths() {
 viewModel.onItemTap = (args) => {
     
     Frame.topmost().navigate({
-        moduleName: "featured/categorie",
+        moduleName: "results/categorie",
         context: { gara: args.index },
         transition: {
             name: "fade"
@@ -50,7 +50,7 @@ viewModel.onItemTap = (args) => {
 };
 
 function FeaturedViewModel() {
-    SelectedPageService.getInstance().updateSelectedPage("Featured");
+    SelectedPageService.getInstance().updateSelectedPage("Results");
 
     // listaCorse = new ObservableArray();
     // viewModel.set("listaCorse", listaCorse);

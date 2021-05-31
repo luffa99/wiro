@@ -1,6 +1,6 @@
 const app = require("@nativescript/core").Application;
 
-const BrowseViewModel = require("./browse-view-model");
+const BrowseViewModel = require("./myruns-view-model");
 
 function onNavigatingTo(args) {
     const page = args.object;

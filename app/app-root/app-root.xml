@@ -25,7 +25,7 @@ https://docs.nativescript.org/ui/professional-ui-components/SideDrawer/getting-s
                     </GridLayout>
 
                     <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Browse' ? ' -selected': '') }}"
-                        route="browse/browse-page" title="Browse" tap="onNavigationItemTap">
+                        route="myruns/myruns-page" title="Browse" tap="onNavigationItemTap">
                         <Label row="0" col="0" text="&#xf70c;" class="nt-icon fas" />
                         <Label row="0" col="1" text="Le mie corse" class="p-r-10" />
                     </GridLayout>
@@ -36,21 +36,21 @@ https://docs.nativescript.org/ui/professional-ui-components/SideDrawer/getting-s
                         <Label row="0" col="1" text="Search" class="p-r-10" />
                     </GridLayout-->
 
-                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '') }}"
-                        route="featured/featured-page" title="Classifiche" tap="onNavigationItemTap">
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Results' ? ' -selected': '') }}"
+                        route="results/results-page" title="Results" tap="onNavigationItemTap">
                         <Label row="0" col="0" text="&#xf005;" class="nt-icon fas" />
                         <Label row="0" col="1" text="Classifiche" class="p-r-10" />
                     </GridLayout>
 
                     <StackLayout class="hr"></StackLayout>
 
-                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '') }}"
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Login/Logout' ? ' -selected': '') }}"
                         route="settings/settings-page" title="Login/Logout" tap="onNavigationItemTap">
                         <Label row="0" col="0" text="&#xf007;" class="nt-icon fas" />
                         <Label row="0" col="1" text="Login/Logout" class="p-r-10" />
                     </GridLayout>
 
-                     <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Settings2' ? ' -selected': '') }}"
+                     <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Impostazioni' ? ' -selected': '') }}"
                         route="settings/settings2" title="Impostazioni" tap="onNavigationItemTap">
                         <Label row="0" col="0" text="&#xf013;" class="nt-icon fas" />
                         <Label row="0" col="1" text="Impostazioni" class="p-r-10" />

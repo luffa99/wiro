@@ -1,10 +1,11 @@
 const app = require("@nativescript/core").Application;
 
-const SearchViewModel = require("./search-view-model");
+const FeaturedViewModel = require("./results-view-model");
 
 function onNavigatingTo(args) {
     const page = args.object;
-    page.bindingContext = new SearchViewModel();
+    //console.log(args.context);
+    page.bindingContext = new FeaturedViewModel();
 }
 
 function onDrawerButtonTap(args) {

@@ -9,7 +9,7 @@ const viewModel = new Observable();
 
 
 function SettingsViewModel(thepage) {
-    SelectedPageService.getInstance().updateSelectedPage("Settings2");
+    SelectedPageService.getInstance().updateSelectedPage("Impostazioni");
     if (_isAndroid) {
         // Android code here
         viewModel.setProperty("url","https://wiro.scom-mendrisio.ch/support/android");

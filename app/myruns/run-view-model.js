@@ -60,7 +60,7 @@ viewModel.onButtonTap = (args) => {
     
     viewModel.set("isBusy",true);
     Frame.topmost().navigate({
-        moduleName: "featured/classifica",
+        moduleName: "results/classifica",
         context: { gara: garaId, categoria: categoriaId},
         transition: {
             name: "fade"
@@ -110,7 +110,7 @@ viewModel.onDelete = (args) => {
                             
                             Dialogs.alert(alertOptions).then(() => {
                                 Frame.topmost().navigate({
-                                    moduleName: "browse/browse-page",
+                                    moduleName: "myruns/myruns-page",
                                     transition: {
                                         name: "fade"
                                     }
@@ -127,7 +127,7 @@ viewModel.onDelete = (args) => {
                             
                             Dialogs.alert(alertOptions).then(() => {
                                 Frame.topmost().navigate({
-                                    moduleName: "browse/browse-page",
+                                    moduleName: "myruns/myruns-page",
                                     transition: {
                                         name: "fade"
                                     }
@@ -146,7 +146,7 @@ viewModel.onDelete = (args) => {
                     
                     Dialogs.alert(alertOptions).then(() => {
                         Frame.topmost().navigate({
-                            moduleName: "browse/browse-page",
+                            moduleName: "myruns/myruns-page",
                             transition: {
                                 name: "fade"
                             }

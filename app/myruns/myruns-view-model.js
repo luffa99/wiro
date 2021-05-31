@@ -33,7 +33,7 @@ viewModel.onItemTap = (args) => {
     // });
     //console.log(listaCorse.getItem(args.index).name);
     Frame.topmost().navigate({
-        moduleName: "browse/run-page",
+        moduleName: "myruns/run-page",
         context: { runfile: listaCorse.getItem(args.index).name },
         transition: {
             name: "fade"

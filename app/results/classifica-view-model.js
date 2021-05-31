@@ -10,7 +10,7 @@ viewModel.onButtonTap = (args) => {
     
     viewModel.set("isBusy",true);
     Frame.topmost().navigate({
-        moduleName: "featured/intertempi",
+        moduleName: "results/intertempi",
         context: { gara: garaId, categoria: categoriaId},
         transition: {
             name: "fade"

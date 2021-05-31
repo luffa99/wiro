@@ -28,7 +28,7 @@ viewModel.onButtonTap = (btargs) => {
   };
 
 function SettingsViewModel(thepage) {
-    SelectedPageService.getInstance().updateSelectedPage("Settings2");
+    SelectedPageService.getInstance().updateSelectedPage("Impostazioni");
 
 
     viewModel.set("keepAwakePage",appSettings.getBoolean("keepAwake",false));
