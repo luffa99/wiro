@@ -1,14 +1,17 @@
-# scom-o
+# WirO
+<p float="left">
+<img src="graphics/phone.png" alt="drawing" width="200"/>
+<img src="graphics/logo.png" alt="drawing" width="200"/>
+</p>
 
-- Informazioni su installare nativescript: https://docs.nativescript.org/angular/start/quick-setup#full-setup
-- Comandi utili:
-  - ns build android // Produce app apk per android
-  - ns run android // avvia l'app su android (via usb) e aggiorna in caso di modifiche in tempo reale
-- Librerie utilizzate:
+### WirO is a mobile phone application which allows recording Orienteering runs, or other types of sport runs, using a smartphone and NFC tags. The app records split and total times and uses NFC tags to check stations passage. Runs are synchronized with a server which shows auto-results.
+
+If you are interested in developing further this app, you're welcome! 
+
+> At the moment the app is localized in _italian_, but this will change (hopefully) asap!
+
+- This apps uses the framework @nativescript https://github.com/NativeScript/NativeScript
+- Other libraries used are:
   - https://plugins.nativescript.rocks/plugin/@nativescript/template-drawer-navigation
   - https://market.nativescript.org/plugins/nativescript-nfc/
   - https://market.nativescript.org/plugins/nativescript-vibrate/
-  
-- Struttura dell'app
-  - Ogni pagina ha 3 files: ```pagina.xml``` (descrive l'aspetto grafico), ```pagina.js``` (inizializza la pagina, caricando il viewModel), ```pagina-view-model.js``` (dove c'è effettivamente il codice della pagina)
-  - Il file che contiene la logica per la registrazione dei punti ecc è ```home-run-view-model.js```
