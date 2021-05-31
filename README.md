@@ -12,6 +12,6 @@ If you are interested in developing further this app, you're welcome! You can al
 
 - This apps uses the framework @nativescript https://github.com/NativeScript/NativeScript
 - Other libraries used are:
-  - https://plugins.nativescript.rocks/plugin/@nativescript/template-drawer-navigation
-  - https://market.nativescript.org/plugins/nativescript-nfc/
-  - https://market.nativescript.org/plugins/nativescript-vibrate/
+  - https://github.com/NativeScript/nativescript-app-templates
+  - https://github.com/luffa99/nativescript-nfc
+  - https://github.com/juliomrqz/nativescript-vibrate
