@@ -1,0 +1,57 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="font://&#xf060;"  tap="onDrawerButtonTap" class="fas" style="font-size: 8"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="font://&#xf060;" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left"
+            class="fas"
+            style="font-size: 25">
+        </ActionItem>
+        <Label text="{{ titoloPercorso }}"></Label>
+    </ActionBar>
+
+    <GridLayout>
+        <ActivityIndicator busy="{{ isBusy }}" width="50" height="50" color="#0438a9" />
+        
+        <GridLayout rows="auto, auto, auto, auto, auto *">
+            <Button row="1" text="&#xf080; Analisi intertempi" class="fas" tap="{{ onButtonTap }}" visibility="{{ connection ? 'visible' : 'collapsed' }}" />
+            <GridLayout row="0" columns="auto, *" rows="auto, auto" style="padding: 10">
+                <label text="Distanza:" row="0" col="0"  style="font-size: 20;"/>
+                <label text="{{ distanza }}" row="0" col="1" textAlignment="right"  style="font-size: 20;"/>
+                <label text="Dislivello:" row="1" col="0"  style="font-size: 20;"/>
+                <label text="{{ dislivello }}" row="1" col="1" textAlignment="right"  style="font-size: 20;"/>
+            </GridLayout>
+                        <StackLayout row="2" class="hr m-10"></StackLayout>
+
+            <label text="Classifica" row="3" textAlignment="center" style="font-size: 20; padding-left: 10;"/>
+
+            <StackLayout row="4" class="hr m-10"></StackLayout>
+
+            <ScrollView row="5" class="page__content">
+                <ListView items="{{ listaCorse }}" itemTap="{{ onItemTap }}"
+                        style="height:auto">
+                        <ListView.itemTemplate>
+                            <GridLayout columns="auto, auto, *" rows="auto" backgroundColor="{{ $value.me ? '#F1F1F1' : '' }}">
+                                <label text="{{ $value.run_state == 'OK' ? $value.rank : '-'}}" row="0" col="0"  style="font-size: 18; padding-left: 10;"/>
+                                <label text="{{ $value.name }}" row="0" col="1"  style="font-size: 18; padding-left: 18;"/>
+                                <label text="{{ $value.run_state == 'OK' ? $value.tot_time : $value.run_state }}" row="0" col="2" textAlignment="right"  style="font-size: 18; padding-right: 20;"/>
+                            </GridLayout>
+                        </ListView.itemTemplate>
+                </ListView>
+            </ScrollView>
+        </GridLayout>
+    </GridLayout>
+</Page>

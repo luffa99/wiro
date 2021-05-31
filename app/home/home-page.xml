@@ -1,0 +1,51 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="font://&#xf14e;"  class="far" style="font-size: 10" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="font://&#xf14e;"  class="far" style="font-size: 25" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label text="Home"></Label>
+    </ActionBar>
+    <GridLayout>
+    <ActivityIndicator busy="{{ isBusy }}" width="50" height="50" color="#0438a9" />
+    <StackLayout class="page__content">
+        <Label text="Per cominciare," class="h2" style="padding:15; padding-top: 5; padding-bottom: 0;"/>
+        <Label text="&#xf59f; seleziona un percorso" class="h3 fas" style="padding-left: 15; padding-top: 5;"/>
+        <ListPicker 
+            loaded="{{ onListPickerLoaded }}"
+            items="{{ listOfPaths }}"
+            textField="name"
+            valueField="id"
+            selectedIndex="{{ selectedItem }}"
+            visibility="visible"
+            class="picker">
+        </ListPicker>
+        <Label text="&#xf4d7; e una categoria" class="h3 fas" style="padding-left: 15; padding-top: 5;"/>
+        <ListPicker 
+            loaded="{{ onListPickerLoaded2 }}"
+            items="{{ listOfCats }}"
+            textField="name"
+            valueField="id"
+            selectedIndex="{{ selectedItem2 }}"
+            visibility="visible"
+            class="picker">
+        </ListPicker>
+        <Button text="SELEZIONA" tap="{{ goToRun }}" class="{{ goToRunColor }}" style="margin-bottom:10" />
+        <Button text="{{ nfcText }}" tap="{{ onTapNFC }}" ios:visibility="collapsed" class="{{ nfcColorStatus }}" style="margin-top: 0;"/>
+    </StackLayout>
+    </GridLayout>
+</Page>

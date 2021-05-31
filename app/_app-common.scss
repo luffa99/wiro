@@ -1,0 +1,117 @@
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue";
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+    font-family: "Font Awesome 5 Brands", "fa-brands-400";
+    font-weight: 400;
+}
+
+.fas {
+    font-family: "Font Awesome 5 Free", "fa-solid-900";
+    font-weight: 900;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free", "fa-regular-400";
+    font-weight: 400;
+}
+
+// Common page class
+.page__content {
+
+    &-icon,
+    &-placeholder {
+        color: const(grey);
+        font-size: 20;
+        vertical-align: center;
+        horizontal-align: center;
+    }
+
+    &-icon {
+        font-size: 72;
+        vertical-align: top;
+        margin-top: 20%;
+    }
+}
+
+// Drawer navigation custom styles
+.nt-drawer__header-image {
+    color: const(grey);
+}
+
+// Perso
+.red {
+    background-color: red;
+    font-size: 18;
+    color: white;
+}
+.blue {
+    background-color: #0438a9;
+    font-size: 18;
+    color: white;
+}
+.green {
+    background-color: green;
+    font-size: 18;
+    color: white;
+}
+.gray {
+    background-color: rgb(94, 94, 94);
+    font-size: 18;
+    color: white;
+}
+.text-rep {
+    font-size: 18;
+    font-family: monospace;
+}
+
+ActionBar {
+    background-color:  #0438a9;
+    color: white;
+}
+
+.timer {
+    font-size: 70;
+}
+
+#puntiLista{
+    margin: 10;
+}
+
+.corse-lista{
+    padding: 5;
+    // border-top-width: 1;
+    // border-top-color:rgb(94, 94, 94);
+    font-size: 25;
+}
+
+.h2 {
+    font-size: 35;
+    padding:15;
+}
+.h3{
+    font-size: 25;
+}
+
+.picker {
+    border-width: 0;
+    width: 100%;
+    height: 122;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.form {
+    margin-left: 10;
+    margin-right: 10;
+    flex-grow: 1;
+    vertical-align: middle;
+}
+
+.input{
+    font-size: 20
+}

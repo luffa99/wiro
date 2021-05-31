@@ -1,0 +1,47 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="font://&#xf14e;"  class="far" style="font-size: 10" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="font://&#xf14e;"  class="far" style="font-size: 25" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label text="Impostazioni"></Label>
+    </ActionBar>
+
+    
+
+    <StackLayout class="page__content" style="padding:10;">
+
+
+        <GridLayout columns="auto, *" rows="auto">
+            <Label row="0" col="0" style="font-size:20; padding: 10" text="Schermo attivo"></Label>
+            <Switch row="0" horizontalAlignment="right" col="1" checked="{{ keepAwakePage }}" checkedChange="{{ onButtonTap }}"></Switch>
+        </GridLayout>   
+
+        <StackLayout class="hr" />
+
+        <GridLayout columns="auto, *" rows="auto">  
+            <Label row="0" col="0" style="font-size:15; padding: 10" text="Versione:"></Label>
+            <Label row="0" col="1" style="font-size:15; text-align: right; padding: 10" text="1.2.4"></Label>
+        </GridLayout>   
+
+        <StackLayout class="hr" />
+
+        <Button style="font-size:20; padding: 10" text="Informazioni/Supporto &#xf35d;" class="fas" tap="{{ onButtonTap2 }}"></Button>
+
+
+    </StackLayout>
+</Page>

@@ -1,0 +1,65 @@
+{
+  "name": "@nativescript/template-drawer-navigation",
+  "main": "app/app.js",
+  "displayName": "Navigation Drawer",
+  "templateType": "App template",
+  "version": "8.0.2",
+  "description": "NativeScript Application",
+  "author": "NativeScript Team <oss@nativescript.org>",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "app",
+    "App_Resources",
+    "tools",
+    "hooks",
+    "!tools/assets",
+    ".editorconfig",
+    "jsconfig.json"
+  ],
+  "keywords": [
+    "nstudio",
+    "nativescript",
+    "mobile",
+    "{N}",
+    "tns",
+    "template",
+    "drawer",
+    "navigation",
+    "category-general"
+  ],
+  "repository": "<fill-your-repository-here>",
+  "homepage": "https://github.com/NativeScript/nativescript-app-templates",
+  "bugs": {
+    "url": "https://github.com/NativeScript/NativeScript/issues"
+  },
+  "scripts": {
+    "lint": "eslint \"app/**/*.js\""
+  },
+  "dependencies": {
+    "@irman/nativescript-screen-orientation": "^1.1.2",
+    "@nativescript-community/insomnia": "^2.0.2",
+    "@nativescript/core": "^8.0.1",
+    "@nativescript/theme": "~3.0.1",
+    "nativescript-nfc": "^5.0.0",
+    "nativescript-orientation": "^2.2.5",
+    "nativescript-orientation-ssi": "^2.2.5",
+    "nativescript-ui-sidedrawer": "~9.0.3",
+    "nativescript-vibrate": "^4.0.1",
+    "rxjs": "^6.6.7"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.0.0",
+    "@nativescript/ios": "8.0.0",
+    "@nativescript/webpack": "5.0.0-beta.2",
+    "eslint": "~7.7.0",
+    "sass": "^1.32.8"
+  },
+  "private": "true",
+  "readme": "NativeScript Application",
+  "nativescript": {
+    "id": "ch.scom.wiro"
+  }
+}

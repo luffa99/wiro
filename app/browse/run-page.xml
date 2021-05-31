@@ -1,0 +1,64 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="font://&#xf060;"  tap="onDrawerButtonTap" class="fas" style="font-size: 8"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="font://&#xf060;" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left"
+            class="fas"
+            style="font-size: 25">
+        </ActionItem>
+        <Label text="{{ titoloPercorso }}" style="font-size: 25"></Label>
+
+        <ActionItem tap="{{ onDelete }}"
+            ios.systemIcon="16"
+            text="Elimina" android.position="popup" ios.position="right">
+        </ActionItem>
+
+    </ActionBar>
+
+    <StackLayout class="page__content">
+        <!--Label textWrap="true" text="{{ titoloPercorso }}"
+                class="h2 description-label" style="padding: 10" /-->
+        <Label textWrap="true" text="{{ dataPercorso }}"
+                class="description-label" textAlignment="center" style="font-size: 20; padding: 10; padding-top: 10;" />
+
+        <GridLayout columns="auto, *" rows="auto, auto, auto, auto" style="font-size: 20">
+            <label text="Corridore:" row="0" col="0"  style=" padding-left: 10;"/>
+            <label text="{{ corridore }}" row="0" col="1" textAlignment="right"  style= "padding-right: 20;"/>
+            <label text="Categoria:" row="1" col="0"  style=" padding-left: 10;"/>
+            <label text="{{ titoloCat }}" row="1" col="1" textAlignment="right"  style="padding-right: 20;"/>
+            <label text="Tempo totale:" row="2" col="0"  style=" padding-left: 10;"/>
+            <label text="{{ totTime }}" row="2" col="1" textAlignment="right"  style="padding-right: 20;"/>
+            <label text="Stato:" row="3" col="0"  style="padding-left: 10;"/>
+            <label text="{{ statoGara }}" row="3" col="1" textAlignment="right"  style="padding-right: 20;"/>
+        </GridLayout>
+
+        <Button text="&#xf091; Classifiche" class="fas" tap="{{ onButtonTap }}" />
+
+        <StackLayout class="hr" style="padding: 0; margin: 0; margin-top: 10"></StackLayout>
+
+        <ScrollView height="1500" id="puntiLista" >
+            <Repeater items="{{ listaPunti }}" style="margin-bottom: 15">
+                <Repeater.itemsLayout>
+                    <StackLayout orientation="vertical" />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <Label text="{{ $value }}" margin="1" class="text-rep" textAlignment="center"/>
+                </Repeater.itemTemplate>
+            </Repeater>
+        </ScrollView>
+    </StackLayout>
+</Page>

@@ -1,0 +1,44 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" tap="onDrawerButtonTap" icon="font://&#xf14e;"  class="far" style="font-size: 10"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="font://&#xf14e;"  class="far" style="font-size: 25"
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label text="Le mie corse"></Label>
+    </ActionBar>
+
+    
+    <GridLayout>
+        <ActivityIndicator busy="{{ isBusy }}" width="50" height="50" color="#0438a9" />
+
+        <ScrollView class="page__content">
+            <ListView items="{{ listaCorse }}" itemTap="{{ onItemTap }}"
+                    style="height:auto">
+                    <ListView.itemTemplate>
+                        <FlexboxLayout flexDirection="row">
+                            <Label text=" {{ $value.pathId }}" 
+                                verticalAlignment="center" style="font-size: 20; width: 45%" />
+                            <Label text=" {{ $value.Date}}" class="t-12"
+                                verticalAlignment="center" style="width: 45%" />
+                            <Label row="0" col="0" text="{{ $value.isSynch ? '&#xf058;' : '&#xf021;' }}" style="width: 10%" class="nt-icon fas" />
+                        </FlexboxLayout>
+                    </ListView.itemTemplate>
+            </ListView>
+        </ScrollView>
+    </GridLayout>
+
+</Page>

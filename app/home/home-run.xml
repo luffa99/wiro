@@ -1,0 +1,43 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="font://&#xf14e;"  class="far" style="font-size: 10" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="font://&#xf14e;"  class="far" style="font-size: 25" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label text="{{ selectedPathName }}"></Label>
+    </ActionBar>
+
+    <StackLayout class="page__content">
+        <Label text="{{ mainTimer }}" class="timer text-center" />
+        <Button text="{{ timerText }}" tap="{{ switchTime }}" class="{{ timerTextColor }}" />
+        <Button text="Cambia percorso" tap="{{ mCorsa }}" class="blue"
+        visibility = "{{ mCorsaShow }}" />
+        <Button text="TIMBRA PUNTO" tap="{{ timbraPuntoiOS }}" class="green"
+        visibility = "{{ timbraPuntoiOSShow }}" android:visibility="collapsed" />
+        <Label text="{{ message }}" class="h3 text-center" textWrap="true"/>
+        <ScrollView height="1500" id="puntiLista">
+            <Repeater items="{{ listaPunti }}" style="margin-bottom: 15">
+                <Repeater.itemsLayout>
+                    <StackLayout orientation="vertical" />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <Label text="{{ $value }}" margin="1" class="text-rep" textAlignment="center"/>
+                </Repeater.itemTemplate>
+            </Repeater>
+        </ScrollView>
+    </StackLayout>
+</Page>
